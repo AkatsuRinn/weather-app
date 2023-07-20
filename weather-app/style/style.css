@@ -1,0 +1,59 @@
+html {
+    height: 100%;
+    font-size: 20px;
+    margin: auto;
+    display: table; 
+}
+
+.card {
+    margin: 24px;
+    background-image: url("../img/cardBG.jpg");
+    background-position: 100% 10%;
+    color: aliceblue; 
+}
+
+.title{
+    margin-left: 23px;
+}
+
+body {
+    height: 100%;
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#temperature{
+    font-size: 50px;
+}
+
+.card-img-left{
+    margin-bottom: 20px;
+}
+
+.card-title{
+    margin-left: 16px;
+}
+
+.condition{
+    margin: 20px;
+    font-size: 20px;
+}
+
+.feels-like{
+    margin: 20px;
+}
+
+.marg{
+    margin-right: 15px;
+}
+
+.col{
+    margin: 0%;
+    padding-right: 0%;
+    column-width: auto;
+}
+
+#btn-change{
+    margin-left: 30%;
+}

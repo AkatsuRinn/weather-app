@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shorcut icon" href="./img/icon-head.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+</head>
+<body>
+    <h1 class="title">Weather app</h1>
+    <div class="card" style="width: 30rem;">        
+        <div class="card-body">
+          <h5 class="card-title" id="cityname">Иваново</h5>
+          <p class="card-title" id="datetime">пт, 20 июля 22:00</p>
+          <div class="container">
+            <div class="row align-items-start">
+              <div class="col">
+                <span id="temperature">15°C</span>
+                <img src="img/icon.png" class="card-img-left" alt="weather">
+              </div>
+              <div class="col">
+                <div class="condition" id="condition">Переменная облачность</div>
+                <div class="feels-like">Ощущается как +12°C</div>
+              </div>
+            </div>
+            </div>
+          <div class="container">
+            <div class="row align-items-start">
+              <div class="col">
+                <span class="marg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                    <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"></path>
+                    </svg> <i id="wind-speed">2,3 м/с, С</i>
+                </span>
+                <span class="marg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moisture" viewBox="0 0 16 16">
+                    <path d="M13.5 0a.5.5 0 0 0 0 1H15v2.75h-.5a.5.5 0 0 0 0 1h.5V7.5h-1.5a.5.5 0 0 0 0 1H15v2.75h-.5a.5.5 0 0 0 0 1h.5V15h-1.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5V.5a.5.5 0 0 0-.5-.5h-2zM7 1.5l.364-.343a.5.5 0 0 0-.728 0l-.002.002-.006.007-.022.023-.08.088a28.458 28.458 0 0 0-1.274 1.517c-.769.983-1.714 2.325-2.385 3.727C2.368 7.564 2 8.682 2 9.733 2 12.614 4.212 15 7 15s5-2.386 5-5.267c0-1.05-.368-2.169-.867-3.212-.671-1.402-1.616-2.744-2.385-3.727a28.458 28.458 0 0 0-1.354-1.605l-.022-.023-.006-.007-.002-.001L7 1.5zm0 0-.364-.343L7 1.5zm-.016.766L7 2.247l.016.019c.24.274.572.667.944 1.144.611.781 1.32 1.776 1.901 2.827H4.14c.58-1.051 1.29-2.046 1.9-2.827.373-.477.706-.87.945-1.144zM3 9.733c0-.755.244-1.612.638-2.496h6.724c.395.884.638 1.741.638 2.496C11 12.117 9.182 14 7 14s-4-1.883-4-4.267z"></path>
+                    </svg> <i id="humidity">41 %</i>
+                </span>
+                <span class="marg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-thermometer" viewBox="0 0 16 16">
+                    <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                    <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0zM6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15V2.5z"></path>
+                    </svg> <i id="pressure">753 мм рт. ст.</i>                    
+                  </span>
+              </div>
+            </div>
+          <p class="card-text"></p>
+        </div>
+    </div>
+    </div>
+    <div class="card" style="width: 30rem;" id="weather_card">
+        <div class="card-body">
+            <label for="exampleDataList" class="form-label">Введите название города</label>
+            <div class="row align-items-start">
+              <div class="col" id="form">
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Москва">
+                <datalist id="datalistOptions">
+                  <option value="Нижний Новгород">
+                  <option value="Ярославль">
+                  <option value="Челябинск">
+                  <option value="Санкт-Петербург">
+                  <option value="Екатеринбург">
+                  <option value="Москва">
+                  <option value="Иваново">
+                </datalist>
+              </div>
+              <div class="col">
+              <button type="button" class="btn btn-primary" id="btn-change">Изменить город</button>
+              </div>
+            </div>
+        </div>
+        
+      </div>
+
+      <script src="js/script.js"></script>
+</body>
+</html>
